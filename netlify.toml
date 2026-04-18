@@ -1,0 +1,110 @@
+# Netlify Configuration
+# This file optimizes deployment to Netlify
+
+[build]
+  # Directory to publish (root directory in this case)
+  publish = "."
+  # No build command needed - static files
+  command = ""
+
+# HTTP Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Content Security Policy
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data:; connect-src 'self'"
+    
+    # Prevent MIME type sniffing
+    X-Content-Type-Options = "nosniff"
+    
+    # Enable XSS protection
+    X-XSS-Protection = "1; mode=block"
+    
+    # Clickjacking protection
+    X-Frame-Options = "SAMEORIGIN"
+    
+    # Referrer policy
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Permissions policy
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    
+    # Enable HSTS (HTTPS Strict Transport Security)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Cache headers for static files
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.gif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Redirect rules
+[[redirects]]
+  # Redirect for single page application
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables (optional)
+# Uncomment and add your environment variables if needed
+# [context.production.environment]
+#   SITE_NAME = "Md Tanvir Islam - QA Engineer"
+
+# Context-specific settings
+[context.production]
+  # Production context settings
+  command = ""
+
+[context.deploy-preview]
+  # Deploy preview context
+
+[context.branch-deploy]
+  # Branch deploy context
+
+# Plugins (optional)
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  # Uncomment to enable Lighthouse performance reports
+  # [plugins.inputs]
+  #   output_path = "lighthouse"
+  #   upload_artifacts = true

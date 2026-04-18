@@ -1,0 +1,63 @@
+# OS Files
+.DS_Store
+Thumbs.db
+.env.local
+.env.*.local
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# Node (if using any build tools in future)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Analytics
+lighthouse/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS generated files
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Backups
+*.bak
+*.backup
+*~
+
+# ZIP files (for backup purposes)
+*.zip
+*.7z
+*.rar
+
+# Private files
+private/
+secrets/
