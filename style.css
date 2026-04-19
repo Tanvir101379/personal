@@ -266,6 +266,14 @@ body {
     50% { filter: hue-rotate(20deg); }
 }
 
+.hero-roles {
+    font-size: 1.3rem;
+    color: var(--accent-light);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
 .hero-subtitle {
     font-size: 1.2rem;
     color: var(--text-secondary);
@@ -830,6 +838,153 @@ body {
     font-size: 0.95rem;
 }
 
+/* ========== WHAT I DO SECTION ========== */
+.what-i-do {
+    padding: 100px 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 2.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+    transition: left var(--transition);
+}
+
+.service-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.15);
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+}
+
+.service-card > p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.service-list li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.service-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* ========== CAREER GOAL SECTION ========== */
+.career-goal {
+    padding: 100px 2rem;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, 
+        rgba(99, 102, 241, 0.05) 0%,
+        rgba(236, 72, 153, 0.05) 100%);
+}
+
+.goal-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.goal-text {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.vision-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.vision-item {
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.vision-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+}
+
+.vision-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.vision-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.vision-item strong {
+    color: var(--primary);
+}
+
 /* ========== EDUCATION SECTION ========== */
 .education {
     padding: 100px 2rem;
@@ -952,13 +1107,206 @@ body {
 }
 
 /* ========== RESPONSIVE ========== */
+/* ========== WHAT I DO SECTION ========== */
+.what-i-do {
+    padding: 100px 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    padding: 2.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+    transition: left var(--transition);
+}
+
+.service-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 1;
+}
+
+.service-card > p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.service-list {
+    list-style: none;
+    position: relative;
+    z-index: 1;
+}
+
+.service-list li {
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.service-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* ========== CAREER GOAL SECTION ========== */
+.career-goal {
+    padding: 100px 2rem;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, 
+        rgba(99, 102, 241, 0.05) 0%,
+        rgba(236, 72, 153, 0.05) 100%);
+}
+
+.goal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.goal-text {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--bg-card);
+    border-left: 3px solid var(--primary);
+    border-radius: 10px;
+}
+
+.vision-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.vision-item {
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.vision-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+}
+
+.vision-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.vision-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.vision-item strong {
+    color: var(--primary);
+}
+
+.hero-roles {
+    color: var(--accent-light);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    max-width: 550px;
+}
+
 @media (max-width: 768px) {
-    .hero-content {
+    .services-grid,
+    .vision-highlights {
         grid-template-columns: 1fr;
     }
 
+    .goal-text {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+
+    .service-card,
+    .vision-item {
+        padding: 1.5rem;
+    }
+
+    .service-icon,
+    .vision-icon {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
     .hero-title {
         font-size: 2.5rem;
+    }
+
+    .hero-roles {
+        font-size: 1.1rem;
     }
 
     .nav-menu {
@@ -1010,6 +1358,20 @@ body {
 
     .hero-visual {
         margin-top: 2rem;
+    }
+
+    .services-grid,
+    .skills-showcase,
+    .vision-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        padding: 1.5rem;
+    }
+
+    .exp-header {
+        flex-direction: column;
     }
 }
 
